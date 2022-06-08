@@ -60,6 +60,10 @@ export class GameOfLife{
     }
   }
 
+  movePattern(t){
+    return 'fail';
+  }
+
 
 
   getPatternDimension(){

@@ -45,5 +45,14 @@ describe("Pattern on the Board", () => {
     expect(game.board.display[8][7]).to.equal("o");
   });
 
+  game.movePattern(1);
+
+  it("Position after 1 times forward", () => {
+    expect(game.board.display[7][8]).to.equal("o");
+    expect(game.board.display[8][9]).to.equal("o");
+    expect(game.board.display[7][9]).to.equal("o");
+    expect(game.board.display[8][8]).to.equal("o");
+  });
+
 });
 
