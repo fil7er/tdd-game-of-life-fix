@@ -35,6 +35,10 @@ export class GameOfLife{
     return data[4];
   }
 
+  getPatternDimension(){
+    return 'fail';
+  }
+
 
 }
 
