@@ -45,8 +45,14 @@ describe("Pattern on the Board", () => {
     expect(game.board.display[8][7]).to.equal("o");
   });
 
-  game.movePattern(1);
+});
 
+
+describe("moving", () => {
+  let game = new GameOfLife(16);
+  game.movePattern(1);
+  console.log(game.board.display.join('\n').toString());
+ 
   it("Position after 1 times forward", () => {
     expect(game.board.display[7][8]).to.equal("o");
     expect(game.board.display[8][9]).to.equal("o");
@@ -54,5 +60,18 @@ describe("Pattern on the Board", () => {
     expect(game.board.display[8][8]).to.equal("o");
   });
 
+
+  it("No duplicate of alive cells", () => {
+    for(let i=0; i< game.board.size; i++){
+      for(let j=0; j< game.board.size; j++){
+        if((i != 7 && i != 8) && (j != 8 && j != 9)){
+          if(game.board.display[i][j] === 'o'){
+            console.log(i+'-'+j);
+            throw 'Duplicated';
+          }
+        }
+      }
+    }
+  });
 });
 

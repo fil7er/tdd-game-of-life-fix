@@ -68,6 +68,11 @@ export class GameOfLife{
         this.board.display[y][x] = 'o';
       }
     }
+
+    //Remove Initial pos
+    for(let y= this.pattern.PosOnBoardY; y < this.pattern.sizeY + this.pattern.PosOnBoardY; y++){
+      this.board.display[y][this.pattern.PosOnBoardX] = 'b';
+    }
   }
 
 
