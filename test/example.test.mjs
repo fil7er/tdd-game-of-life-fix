@@ -76,7 +76,7 @@ describe("moving", () => {
 describe("Saving to RLE", () => {
 
   let game = new GameOfLife(16);
-
+  game.saveToRle();
   it("output.rle can be writable/created", () => {
     expect(fs.existsSync("output.rle")).to.be.true;
   });

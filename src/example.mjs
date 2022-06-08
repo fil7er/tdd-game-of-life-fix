@@ -82,6 +82,13 @@ export class GameOfLife{
   }
 
 
+//Saving
+
+saveToRle(){
+  fs.writeFileSync("output.rle", "Hello");
+}
+
+
 }
 
 
