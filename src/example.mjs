@@ -85,10 +85,12 @@ export class GameOfLife{
 //Saving
 
 saveToRle(){
-
+  let finalString = '';
   for(let y = 0; y < this.board.size; y++){
     for(let x =0; x < this.board.size;  x++){
-
+      if(this.board.display[y][x] == 'o'){
+        
+      }
     }
   }
 
