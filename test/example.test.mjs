@@ -5,9 +5,8 @@ import fs from 'fs';
 describe("Creating Board", () => {
 
   let game = new GameOfLife(16);
-
   it("must be 16 of lenght", () => {
-    expect(game.createBoard()).to.equal(16);
+    expect(game.board.size).to.equal(16);
   });
 
   it("must have dead cells only", () => {
@@ -33,7 +32,15 @@ describe("Parsing block rle", () => {
     expect(game.getPatternDimension().sizeY).to.equal(2);
   });
 
+});
 
+describe("Pattern on the Board", () => {
+
+  let game = new GameOfLife(16);
+
+  it("pattern initial position must be in the middle", () => {
+    expect(game.createBoard()).to.equal(16);
+  });
 
 });
 

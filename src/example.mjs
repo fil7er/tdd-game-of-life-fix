@@ -4,13 +4,14 @@ export class GameOfLife{
 
   
   constructor(size) {
-      this.size = size;
+      this.board = new Board(size);
+      this.createBoard();
       this.pattern = new Pattern(2,2, '2o$2o!');
   }
 
   isClear = true;
-  size;
   pattern;
+  board;
 
   isBoardClear(){
     return this.isClear;
@@ -18,14 +19,15 @@ export class GameOfLife{
 
   createBoard() {
     let board = new Array;
-    for(let i = 0; i < this.size; i++) board.push(new Array(this.size));
-    for (let y = 0; y < this.size; y++){
-      for (let x = 0; x < this.size; x++){
+    for(let i = 0; i < this.board.size; i++) board.push(new Array(this.board.size));
+    for (let y = 0; y < this.board.size; y++){
+      for (let x = 0; x < this.board.size; x++){
         board[y][x] = 'b';
       }
     }
-    return board.length;
+    this.board.display = board;
   }
+
 
   //Parsing
 
@@ -47,6 +49,19 @@ export class GameOfLife{
 
 
 }
+
+
+export class Board{
+  size;
+  display;
+
+  constructor(size){
+    this.size = parseInt(size);
+  }
+
+}
+
+
 
 export class Pattern {
   sizeX;
