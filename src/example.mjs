@@ -33,10 +33,13 @@ export class GameOfLife{
     let blockPatternFile = fs.readFileSync('block.rle').toString();
 
     let data = blockPatternFile.split("\n");
-    let dataFilter = data.filter((elem) => elem[0] != "#");
-    console.log(dataFilter);
+    let dataFilter = data.filter((elem) => elem[0] != "#").toString();
+    let dataSplit = dataFilter.split(', ru')[0];
+    let dim = {};
+    this.pattern.sizeX = parseInt(dataSplit.split("x =")[1].split(",")[0]);
     return data[4];
   }
+
 
   getPatternDimension(){
     return this.pattern;
