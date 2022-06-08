@@ -85,6 +85,10 @@ describe("Saving to RLE", () => {
 it("pattern string must be inside", () => {
     expect(fs.readFileSync("output.rle").toString().includes("2o$2o!")).to.be.true;
   });
+  it("pattern dimensions must be too", () => {
+    expect(fs.readFileSync("output.rle").toString().includes("x = 2")).to.be.true;
+    expect(fs.readFileSync("output.rle").toString().includes("y = 2")).to.be.true;
+  });
 
 });
 
