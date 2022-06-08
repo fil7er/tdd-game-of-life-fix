@@ -111,8 +111,8 @@ saveToRle(){
   finalString += '!';
 
   
-  fs.writeFileSync("output.rle", "y = 2,"
-    +"x = 2,"
+  fs.writeFileSync("output.rle", "y = "+this.pattern.sizeY+","
+    +"x = "+this.pattern.sizeX+","
       +"rule = B3/S23"
         +"\n"+finalString);
 }
