@@ -92,9 +92,14 @@ saveToRle(){
       if(this.board.display[y][x] == 'o'){
         aliveCellsInSeq++;
       }
+      else if(this.board.display[y][x] == 'b'){
+        finalString += 'o';
+        aliveCellsInSeq = 0;
+      }
     }
+    finalString += '$';
   }
-
+  finalString += '!';
   fs.writeFileSync("output.rle", "2o$2o!");
 }
 
