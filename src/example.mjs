@@ -86,10 +86,11 @@ export class GameOfLife{
 
 saveToRle(){
   let finalString = '';
+  let aliveCellsInSeq = 0;
   for(let y = 0; y < this.board.size; y++){
     for(let x =0; x < this.board.size;  x++){
       if(this.board.display[y][x] == 'o'){
-        
+        aliveCellsInSeq++;
       }
     }
   }
