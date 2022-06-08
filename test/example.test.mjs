@@ -23,4 +23,11 @@ describe("Parsing block rle", () => {
     expect(fs.existsSync('block.rle')).to.be.true;
   });
 
+  it("Pattern string must be 2o$2o!", () => {
+    expect(game.parsePattern()).to.equal('2o$2o!');
+  });
+
+
+
 });
+

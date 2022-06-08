@@ -23,5 +23,11 @@ export class GameOfLife{
     return board.length;
   }
 
+  //Parsing
+
+  parsePattern(){
+    return 'fail';
+  }
+
 }
 
