@@ -3,10 +3,10 @@ import { GameOfLife } from "../src/example.mjs";
 
 describe("Creating Board", () => {
 
-  let game = new GameOfLife();
+  let game = new GameOfLife(16);
 
   it("must be 16 of lenght", () => {
-    expect(game.createBoard(16)).to.equal(16);
+    expect(game.createBoard()).to.equal(16);
   });
 
   it("must have dead cells only", () => {

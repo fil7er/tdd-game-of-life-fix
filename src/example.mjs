@@ -2,7 +2,7 @@ export class GameOfLife{
 
   
   constructor(size) {
-
+      this.size = size;
   }
 
   isClear = true;
@@ -12,11 +12,11 @@ export class GameOfLife{
     return this.isClear;
   }
 
-  createBoard(n) {
+  createBoard() {
     let board = new Array;
-    for(let i = 0; i < n; i++) board.push(new Array(n));
-    for (let y = 0; y < n; y++){
-      for (let x = 0; x < n; x++){
+    for(let i = 0; i < this.size; i++) board.push(new Array(this.size));
+    for (let y = 0; y < this.size; y++){
+      for (let x = 0; x < this.size; x++){
         board[y][x] = 'b';
       }
     }
