@@ -1,5 +1,6 @@
 import { expect } from "chai";
 import { GameOfLife } from "../src/example.mjs";
+import fs from 'fs';
 
 describe("Creating Board", () => {
 
@@ -10,6 +11,16 @@ describe("Creating Board", () => {
   });
 
   it("must have dead cells only", () => {
-    expect(game.isBoardClear()).to.equal(true);
+    expect(game.isBoardClear()).to.be.true;
   });
+});
+
+describe("Parsing block rle", () => {
+
+  let game = new GameOfLife(16);
+
+  it("block.rle must exist", () => {
+    expect(fs.existsSync('block.rle')).to.be.true;
+  });
+
 });
