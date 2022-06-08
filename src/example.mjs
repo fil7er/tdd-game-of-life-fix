@@ -1,9 +1,15 @@
 export class GameOfLife{
 
+  
+  constructor(size) {
+
+  }
+
   isClear = true;
+  size;
 
   isBoardClear(){
-    return true;
+    return this.isClear;
   }
 
   createBoard(n) {
