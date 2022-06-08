@@ -39,7 +39,10 @@ describe("Pattern on the Board", () => {
   let game = new GameOfLife(16);
 
   it("pattern initial position must be in the middle", () => {
-    expect(game.createBoard()).to.equal(16);
+    expect(game.board.display[7][7]).to.equal("o");
+    expect(game.board.display[8][8]).to.equal("o");
+    expect(game.board.display[7][8]).to.equal("o");
+    expect(game.board.display[8][7]).to.equal("o");
   });
 
 });
