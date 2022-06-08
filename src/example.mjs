@@ -5,10 +5,12 @@ export class GameOfLife{
   
   constructor(size) {
       this.size = size;
+      this.pattern = new Pattern(2,2, '2o$2o!');
   }
 
   isClear = true;
   size;
+  pattern;
 
   isBoardClear(){
     return this.isClear;
@@ -36,9 +38,22 @@ export class GameOfLife{
   }
 
   getPatternDimension(){
-    return 'fail';
+    return this.pattern;
   }
 
+
+}
+
+export class Pattern {
+  sizeX;
+  sizeY;
+  stringPattern;
+
+  constructor(x,y,string){
+    this.sizeX = x;
+    this.sizeY = y;
+    this.stringPattern = string;
+  }
 
 }
 

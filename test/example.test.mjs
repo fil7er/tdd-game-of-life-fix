@@ -1,5 +1,5 @@
 import { expect } from "chai";
-import { GameOfLife } from "../src/example.mjs";
+import { GameOfLife, Pattern } from "../src/example.mjs";
 import fs from 'fs';
 
 describe("Creating Board", () => {
@@ -23,12 +23,14 @@ describe("Parsing block rle", () => {
     expect(fs.existsSync('block.rle')).to.be.true;
   });
 
+
   it("Pattern string must be 2o$2o!", () => {
     expect(game.parsePattern()).to.equal('2o$2o!');
   });
 
   it("Dimensions must be x=2 and y=2", () => {
-    expect(game.getPatternDimension()).to.equal([2,2]);
+    expect(game.getPatternDimension().sizeX).to.equal(2);
+    expect(game.getPatternDimension().sizeY).to.equal(2);
   });
 
 
