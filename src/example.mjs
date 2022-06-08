@@ -58,10 +58,16 @@ export class GameOfLife{
         this.board.display[y][x] = 'o';
       }
     }
+    this.pattern.PosOnBoardX = initX;
+    this.pattern.PosOnBoardY = initY;
   }
 
-  movePattern(t){
-    return 'fail';
+  movePattern(){
+    for (let y = this.pattern.PosOnBoardY; y < this.pattern.sizeY + this.pattern.PosOnBoardY; y++){
+      for (let x = this.pattern.PosOnBoardX+1; x < this.pattern.sizeX + this.pattern.PosOnBoardX + 1; x++){
+        this.board.display[y][x] = 'o';
+      }
+    }
   }
 
 
@@ -90,6 +96,8 @@ export class Pattern {
   sizeX;
   sizeY;
   stringPattern;
+  PosOnBoardX;
+  PosOnBoardY;
 
   constructor(x,y,string){
     this.sizeX = x;
