@@ -89,18 +89,22 @@ saveToRle(){
   let aliveCellsInSeq = 0;
   for(let y = 0; y < this.board.size; y++){
     for(let x =0; x < this.board.size;  x++){
-      if(this.board.display[y][x] == 'o'){
+      if(this.board.display[y][x] === 'o'){
         aliveCellsInSeq++;
       }
       else if(this.board.display[y][x] == 'b'){
-        finalString += 'o';
-        aliveCellsInSeq = 0;
+        if(aliveCellsInSeq > 0) {
+          finalString += aliveCellsInSeq+'o';
+          aliveCellsInSeq = 0;
+        } 
       }
     }
     finalString += '$';
   }
   finalString += '!';
-  fs.writeFileSync("output.rle", "2o$2o!");
+
+  console.log(finalString);
+  fs.writeFileSync("output.rle", finalString);
 }
 
 
