@@ -1,8 +1,11 @@
 import { expect } from "chai";
-import { sum } from "../src/example.mjs";
+import { GameOfLife } from "../src/example.mjs";
 
-describe("Example test fixture", () => {
-  it("Example test", () => {
-    expect(sum(1, 2)).to.equal(3);
+describe("Creating Board", () => {
+
+  let game = new GameOfLife();
+
+  it("must be 16 of lenght", () => {
+    expect(game.createBoard(16)).to.equal(16);
   });
 });

@@ -1,3 +1,8 @@
-export function sum(a, b) {
-  return a + b;
+export class GameOfLife{
+
+  createBoard(n) {
+    return 'Fail';
+  }
+
 }
+
