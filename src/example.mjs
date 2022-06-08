@@ -3,7 +3,7 @@ export class GameOfLife{
   isClear = true;
 
   isBoardClear(){
-    return 'Fail';
+    return true;
   }
 
   createBoard(n) {
