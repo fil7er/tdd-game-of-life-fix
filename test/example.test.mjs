@@ -25,7 +25,7 @@ describe("Parsing block rle", () => {
 
 
   it("Pattern string must be 2o$2o!", () => {
-    expect(game.parsePattern()).to.equal('2o$2o!');
+    expect(game.getPatternDimension().stringPattern).to.equal('2o$2o!');
   });
 
   it("Dimensions must be x=2 and y=2", () => {

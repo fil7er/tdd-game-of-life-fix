@@ -37,7 +37,7 @@ export class GameOfLife{
     let dataSplit = dataFilter.split(', ru')[0];
     let dim = {};
     this.pattern.sizeX = parseInt(dataSplit.split("x =")[1].split(",")[0]);
-    return data[4];
+    this.pattern.sizeY = parseInt(dataSplit.split("y =")[1].split(",")[0]);
   }
 
 
