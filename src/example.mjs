@@ -1,3 +1,5 @@
+import fs from 'fs';
+
 export class GameOfLife{
 
   
@@ -26,8 +28,13 @@ export class GameOfLife{
   //Parsing
 
   parsePattern(){
-    return 'fail';
+    let blockPatternFile = fs.readFileSync('block.rle').toString();
+
+    let data = blockPatternFile.split("\n");
+    console.log(data);
+    return data[4];
   }
+
 
 }
 
