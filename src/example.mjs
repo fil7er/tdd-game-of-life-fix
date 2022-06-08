@@ -1,5 +1,11 @@
 export class GameOfLife{
 
+  isClear = true;
+
+  isBoardClear(){
+    return 'Fail';
+  }
+
   createBoard(n) {
     let board = new Array;
     for(let i = 0; i < n; i++) board.push(new Array(n));

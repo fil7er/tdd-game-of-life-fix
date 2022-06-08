@@ -8,4 +8,8 @@ describe("Creating Board", () => {
   it("must be 16 of lenght", () => {
     expect(game.createBoard(16)).to.equal(16);
   });
+
+  it("must have dead cells only", () => {
+    expect(game.isBoardClear()).to.equal(true);
+  });
 });
