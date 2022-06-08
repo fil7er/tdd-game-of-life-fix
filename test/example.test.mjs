@@ -51,7 +51,6 @@ describe("Pattern on the Board", () => {
 describe("moving", () => {
   let game = new GameOfLife(16);
   game.movePattern(1);
-  console.log(game.board.display.join('\n').toString());
  
   it("Position after 1 times forward", () => {
     expect(game.board.display[7][8]).to.equal("o");
@@ -66,12 +65,21 @@ describe("moving", () => {
       for(let j=0; j< game.board.size; j++){
         if((i != 7 && i != 8) && (j != 8 && j != 9)){
           if(game.board.display[i][j] === 'o'){
-            console.log(i+'-'+j);
             throw 'Duplicated';
           }
         }
       }
     }
   });
+});
+
+describe("Saving to RLE", () => {
+
+  let game = new GameOfLife(16);
+
+  it("output.rle can be writable/created", () => {
+    expect(fs.existsSync("output.rle")).to.be.true;
+  });
+
 });
 
