@@ -86,6 +86,11 @@ export class GameOfLife{
 
 saveToRle(){
 
+  for(let y = 0; y < this.board.size; y++){
+    for(let x =0; x < this.board.size;  x++){
+
+    }
+  }
 
   fs.writeFileSync("output.rle", "2o$2o!");
 }
