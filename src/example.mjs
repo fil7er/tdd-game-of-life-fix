@@ -87,9 +87,12 @@ export class GameOfLife{
 saveToRle(){
   let finalString = '';
   let aliveCellsInSeq = 0;
+  let haveAliveCellinThisColumn = false;
+  let i = 0;
   for(let y = 0; y < this.board.size; y++){
     for(let x =0; x < this.board.size;  x++){
       if(this.board.display[y][x] === 'o'){
+        haveAliveCellinThisColumn = true;
         aliveCellsInSeq++;
       }
       else if(this.board.display[y][x] == 'b'){
@@ -99,7 +102,11 @@ saveToRle(){
         } 
       }
     }
-    finalString += '$';
+    if(haveAliveCellinThisColumn === true && i < this.pattern.sizeY-1) {
+      finalString += '$';
+      haveAliveCellinThisColumn = false;
+      i++;
+    }
   }
   finalString += '!';
 
@@ -109,7 +116,6 @@ saveToRle(){
 
 
 }
-
 
 export class Board{
   size;
