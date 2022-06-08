@@ -77,8 +77,13 @@ describe("Saving to RLE", () => {
 
   let game = new GameOfLife(16);
   game.saveToRle();
+
   it("output.rle can be writable/created", () => {
     expect(fs.existsSync("output.rle")).to.be.true;
+  });
+
+it("pattern string must be inside", () => {
+    expect(fs.readFileSync("output.rle").toString().includes("2o$2o!")).to.be.true;
   });
 
 });
