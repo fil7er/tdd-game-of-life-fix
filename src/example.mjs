@@ -110,8 +110,8 @@ saveToRle(){
   }
   finalString += '!';
 
-  console.log(finalString);
-  fs.writeFileSync("output.rle", finalString);
+  
+  fs.writeFileSync("output.rle", "y = 2, "+"x = 2, "+"\n"+finalString);
 }
 
 
